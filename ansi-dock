@@ -62,7 +62,8 @@ cat << EOF
 FROM ubuntu
 
 # Install dependencies
-RUN apt update && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt update && \
     apt install -y \
                 ansible \
                 python3-proxmoxer \
