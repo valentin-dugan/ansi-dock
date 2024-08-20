@@ -83,10 +83,11 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt install -y \
                 ansible \
                 python3-proxmoxer \
+                python3-kubernetes \
                 python3-pip \
                 python3-venv \
                 &&\
-    ansible-galaxy collection install community.general 
+    ansible-galaxy collection install community.general kubernetes.core
 
 # Change prompt
 RUN echo 'PS1="${COLOR_YELLOW}ANSI-DOCK ${COLOR_GREEN}>> ${COLOR_END}"' >> /root/.bashrc
